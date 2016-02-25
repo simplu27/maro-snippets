@@ -1,0 +1,17 @@
+/* Start Clearfix */
+
+.clearfix:after,
+.cf:after {
+	content: ".";
+	display: block;  
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}  
+
+.clearfix, .cf {display: inline-block;}
+* html .clearfix,
+* html .cf { height: 1%;}  
+.clearfix, .cf {display: block;}
+
+/* End Clearfix */
