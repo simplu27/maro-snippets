@@ -10,6 +10,10 @@ CSS, HTML, JS, Apache snippets
 
 - [basic html document] (html/basic-html5-doc.html)
 
+## PHP Snippets
+
+- [remove accents for slug] (php/remove-accents-for-slug.php)
+
 ## Apache Snippets
 
 - [www or non-www] (apache/www-non-www.config)
