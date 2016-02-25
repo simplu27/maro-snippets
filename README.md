@@ -5,3 +5,7 @@ CSS, HTML, JS, Apache snippets
 
 - [telephone link] (css/telephone-link.css)
 - [clearfix](css/clearfix.css)
+
+## Apache Snippets
+
+- [www or non-www] (apache/www-non-www.config)
