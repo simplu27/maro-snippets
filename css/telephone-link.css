@@ -1,0 +1,33 @@
+/* 
+https://css-tricks.com/the-current-state-of-telephone-links/
+
+HTML:
+
+<a href="tel:1-562-867-5309">1-562-867-5309</a>
+<a href="tel:1-562-867-5309">Click to Call!</a>
+
+ */
+
+a[href^="tel:"] {
+  color: orange;
+  text-decoration: none;
+}
+
+/*unicode phone character*/
+
+a[href^="tel:"]:before {
+  content: "\260e";
+  margin-right: 0.5em;
+}
+
+/* 
+Adding Microdata
+http://thenewcode.com/536/Adding-Phone-Numbers-To-Web-Pages-With-HTML5-and-Microdata
+
+<div itemscope itemtype="http://schema.org/LocalBusiness">
+	<h1 itemprop="name">Beach Bunny Swimwear</h1>
+		Phone: <span itemprop="telephone"><a href="tel:+18506484200">
+850-648-4200</a></span>
+</div>
+
+ */
