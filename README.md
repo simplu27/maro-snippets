@@ -17,4 +17,5 @@ CSS, HTML, JS, Apache snippets
 ## Apache Snippets
 
 - [www or non-www] (apache/www-non-www.config)
+- [404 error in .htaccess] (apache/404-error.config)
 
