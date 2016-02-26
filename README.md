@@ -3,16 +3,16 @@ CSS, HTML, JS, Apache snippets
 
 ## CSS Snippets
 
-- [telephone link] (css/telephone-link.css)
-- [clearfix](css/clearfix.css)
+- [Telephone link] (css/telephone-link.css)
+- [Clearfix CSS](css/clearfix.css)
 
 ## HTML Snippets
 
-- [basic html document] (html/basic-html5-doc.html)
+- [Basic html document] (html/basic-html5-doc.html)
 
 ## PHP Snippets
 
-- [remove accents for slug] (php/remove-accents-for-slug.php)
+- [Remove accents for slug] (php/remove-accents-for-slug.php)
 
 ## Apache Snippets
 
