@@ -21,4 +21,5 @@ CSS, HTML, JS, Apache snippets
 - [Prevent access to a specific file in .htaccess] (apache/prevent-access-to-a-file.config)
 - [301 Redirect] (apache/redirect-301.config)
 - [Block IP Address in .htaccess] (apache/block-ip-address.config)
+- [Directory Browsing: Prevent or Allow] (apache/directory-browsing.config)
 
