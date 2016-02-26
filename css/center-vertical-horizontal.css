@@ -1,0 +1,57 @@
+
+/*
+HTML markup
+Info: https://www.w3.org/Style/Examples/007/center#vertical
+
+<div class="container">
+	<div class="box">
+		<p>Lorem ipsum dolor sit.</p>
+	</div><!-- box -->
+</div><!-- container -->
+
+*/
+
+.container {
+    height: 10em;
+    position: relative;
+}
+
+.container .box {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*
+Center in viewport:
+
+<html lang=en>
+<body>
+	<section>
+		<h1>Nicely centered</h1>
+		<p>This text block is vertically centered.
+		<p>Horizontally, too, if the window is wide enough.
+	</section>
+</body>
+</html>
+
+*/
+
+body {background: white; }
+
+section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
+    background: black;
+	color: white;
+	padding: 20px;
+	border-radius: 4px;
+}

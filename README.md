@@ -5,6 +5,8 @@ CSS, HTML, JS, Apache snippets
 
 - [Telephone link] (css/telephone-link.css)
 - [Clearfix CSS](css/clearfix.css)
+- [Center block in viewport, horizontal and vertical](css/center-vertical-horizontal.css)
+
 
 ## HTML Snippets
 
