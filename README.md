@@ -16,6 +16,7 @@ CSS, HTML, JS, Apache snippets
 
 ## Apache Snippets
 
+- [Useful Links] (apache/htaccess-links.md)
 - [www or non-www] (apache/www-non-www.conf)
 - [404 error in .htaccess] (apache/404-error.conf)
 - [Prevent access to a specific file in .htaccess] (apache/prevent-access-to-a-file.conf)
