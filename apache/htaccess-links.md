@@ -1,7 +1,7 @@
 
 .htaccess Cheat Sheet
 All the important Apache .htaccess web server rules and config options
-http://htaccesscheatsheet.com (http://htaccesscheatsheet.com) 
+http://htaccesscheatsheet.com
 
 htaccess Cheatsheet
 http://thejackol.com/htaccess-cheatsheet/
