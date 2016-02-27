@@ -26,3 +26,6 @@ CSS, HTML, JS, Apache snippets
 - [Block IP Address in .htaccess] (apache/block-ip-address.conf)
 - [Directory Browsing: Prevent or Allow] (apache/directory-browsing.conf)
 
+## JavaScript / jQuery
+
+- [Open external links in new tab] (javascript/open-external-links-new-tab.js)
