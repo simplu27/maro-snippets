@@ -12,10 +12,12 @@ CSS, HTML, JS, Apache snippets
 
 - [Basic html document] (html/basic-html5-doc.html)
 
-## [PHP Snippets] (php/)
+## PHP Snippets
 
 - [Remove accents for slug] (php/remove-accents-for-slug.php)
 - [Copyright year php function] (php/copyright-year-function.php)
+- [Page variabiles] (php/page-variabiles.php)
+- [Active class for menu] (php/active-class-function.php)
 
 ## Apache Snippets
 
