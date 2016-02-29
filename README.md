@@ -12,7 +12,7 @@ CSS, HTML, JS, Apache snippets
 
 - [Basic html document] (html/basic-html5-doc.html)
 
-[## PHP Snippets] (php/)
+## [PHP Snippets] (php/)
 
 - [Remove accents for slug] (php/remove-accents-for-slug.php)
 - [Copyright year php function] (php/copyright-year-function.php)
