@@ -1,0 +1,17 @@
+body {
+  background-image: url(background.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+
+  /* SHORTHAND CSS NOTATION
+   * background: url(background.jpg) center center cover no-repeat fixed;
+   */
+}
+
+/*
+https://github.com/sixrevisions/responsive-full-background-image
+http://sixrevisions.com/css/responsive-background-image/
+*/

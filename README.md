@@ -3,6 +3,7 @@ CSS, HTML, JS, Apache snippets
 
 ## CSS Snippets
 
+- [Full background image CSS] (css/full-background-image.css)
 - [Telephone link] (css/telephone-link.css)
 - [Clearfix CSS](css/clearfix.css)
 - [Center block in viewport, horizontal and vertical](css/center-vertical-horizontal.css)
