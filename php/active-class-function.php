@@ -8,7 +8,7 @@
 		}
 	} // activeClass
 
-// Example:
+// Example: (replace ! with ?)
 //	<ul>
 //		<li><a <!php activeClass('homePage'); !>href="/">Home</a></li>
 //		<li><a <!php activeClass('page1Page'); !>href="/page1">Page 1</a></li>
