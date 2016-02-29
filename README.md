@@ -15,6 +15,7 @@ CSS, HTML, JS, Apache snippets
 ## PHP Snippets
 
 - [Remove accents for slug] (php/remove-accents-for-slug.php)
+- [Copyright year php function] (php/copyright-year-function.php)
 
 ## Apache Snippets
 
