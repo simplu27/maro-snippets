@@ -33,3 +33,4 @@ CSS, HTML, JS, Apache snippets
 ## JavaScript / jQuery
 
 - [Open external links in new tab] (javascript/open-external-links-new-tab.js)
+- [Prevent right clicking] (javascript/prevent-right-clicking.js)
