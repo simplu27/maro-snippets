@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Calcul extragere TVA</title>
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	body {font-size: 16px; font-family: Arial, sans-serif; color: #565656; }
+	.center {max-width: 600px; margin: 30px auto;}
+	input {font-size: 18px; }
+	p.result span {color: red;}
+	p.tva span {color: green;}
+</style>
+<!--[if lt IE 9]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT INIT	============ -->
+
+<div class="center">
+	<p>Pret cu TVA: <input type="text" id="input1"></p>	
+	<p class="result">Pret fara TVA [-20%]: <span style="font-weight: bold;"></span></p>
+	<p class="tva">Valoare TVA [20%]: <span style="font-weight: bold;"></span></p>
+	<!-- <p class="tva2">Valoare (calcul direct): <span style="font-weight: bold;"></span></p> -->
+</div><!-- center -->
+<!-- ============	CONTENT END		============ -->
+
+<!-- ===========	JS 	=========== -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
+<script>
+	$( "#input1" )
+		// .keyup: cand se ridica tasta, se introduce ceva
+		.keyup(function() {
+			// se preia valoare din care trebuie extras TVA 20%
+			var valCuTva = $( this ).val();
+			// valoarea fara TVA = valoarea cu TVA impartit la 1.2 (20%)
+			var minustva = valCuTva / 1.2;
+			// valoarea TVA = valoarea cu TVA minus valoarea fara TVA
+			var tva = valCuTva - minustva;
+			// se afiseaza vaoarea fara TVA si valoarea TVA, cu 2 zecimale (.toFixed(2))
+			$( "p.result span" ).text( minustva.toFixed(2) );
+			$( "p.tva span" ).text( tva.toFixed(2) );
+		})
+	// se executa functia
+	.keyup();
+
+</script>
+</body>
+</html>

@@ -36,3 +36,4 @@ CSS, HTML, JS, Apache snippets
 
 - [Open external links in new tab] (javascript/open-external-links-new-tab.js)
 - [Prevent right clicking] (javascript/prevent-right-clicking.js)
+- [Extragere TVA 20% si afisare valoare fara TVA si valoarea TVA] (javascript/calcul-extragere-tva-20.html)
