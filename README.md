@@ -19,6 +19,8 @@ CSS, HTML, JS, Apache snippets
 - [Copyright year php function] (php/copyright-year-function.php)
 - [Page variabiles] (php/page-variabiles.php)
 - [Active class for menu] (php/active-class-function.php)
+- [Last modification time for current file] (php/get-last-modif-time.php)
+- [Set timezone to Europe/Bucharest] (php/get-last-modif-time.php)
 
 ## Apache Snippets
 
