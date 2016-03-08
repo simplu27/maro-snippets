@@ -12,6 +12,8 @@ CSS, HTML, JS, Apache snippets
 ## HTML Snippets
 
 - [Basic html document] (html/basic-html5-doc.html)
+- [Scroll to link with jQuery] (html/scroll-to-link.html)
+- [Responsive Equal Height] (javascript/responsive-equal-height.html)
 
 ## PHP Snippets
 
