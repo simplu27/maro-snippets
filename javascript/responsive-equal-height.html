@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Responsive Equal Height</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css" media="screen" />
+
+<style>
+	article {
+		box-sizing: border-box;
+		float: left;
+		width: 23%;
+		background: #FFF1CF;
+		margin: 10px 1%;
+		padding: 1%;
+	}
+
+	@media all and (max-width: 900px) {
+		article {width: 48% }
+	}
+
+	@media all and (max-width: 480px) {
+		article {width: 98% }
+	}
+</style>
+
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<section class="main">
+	<article>Gally maroon schooner wench provost fathom haul wind parrel chantey brigantine.  </article>
+	<article>Ho six pounders Arr black spot port jib hogshead spirits bilge rat Admiral of the Black. Blow the man down measured fer yer chains hail-shot jolly boat gangway pillage lugsail wherry Jolly Roger Privateer. </article>
+	<article>Lass gangplank bilged on her anchor bring a spring upon her cable rigging lookout Admiral of the Black sheet wench rutters. </article>
+	<article> Driver rope's end port spirits cog fore ye snow sloop hogshead. Belaying pin yo-ho-ho bilge rat come about squiffy spirits jack galleon Brethren of the Coast hang the jib.</article>
+
+	<article>Hail-shot jolly boat gangway pillage lugsail wherry Jolly Roger Privateer.  </article>
+	<article>Plate Fleet strike colors nipper league warp to go on  </article>
+	<article>Admiral of the Black sheet wench rutters.</article>
+	<article>Jack galleon Brethren of the Coast hang the jib. Blow the man down measured fer yer. Admiral of the Black sheet wench rutters. </article>
+</section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>  
+$(document).ready(function(){  
+	/* Thanks to CSS Tricks for pointing out this bit of jQuery
+	http://css-tricks.com/equal-height-blocks-in-rows/
+	It's been modified into a function called at page load and then each time the page is resized. One large modification was to remove the set height before each new calculation. */
+	
+	// http://codepen.io/micahgodbolt/pen/FgqLc
+
+	equalheight = function(container){
+
+		var currentTallest = 0,
+			currentRowStart = 0,
+			rowDivs = new Array(),
+			$el,
+			topPosition = 0;
+
+		$(container).each(function() {
+
+			$el = $(this);
+			$($el).height('auto')
+			topPostion = $el.position().top;
+
+			if (currentRowStart != topPostion) {
+
+				for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+			   		rowDivs[currentDiv].height(currentTallest);
+				} // for
+
+				rowDivs.length = 0; // empty the array
+				currentRowStart = topPostion;
+				currentTallest = $el.height();
+				rowDivs.push($el);
+
+			} else {
+				rowDivs.push($el);
+				currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+			} // else
+
+			for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+				rowDivs[currentDiv].height(currentTallest);
+			} // for
+
+		}); // each function
+	} // equalheight function
+
+	$(window).load(function() {
+		equalheight('.main article');
+	});
+
+	$(window).resize(function(){
+		equalheight('.main article');
+	});
+	
+});  // doc ready
+</script>
+
+</body>
+</html>

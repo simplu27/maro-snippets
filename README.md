@@ -42,3 +42,4 @@ CSS, HTML, JS, Apache snippets
 - [Protect Email Adress: JavaScript Function] (javascript/protect-email-adress-javascript.html)
 - [Protect Email Adress: Data Attribute] (javascript/protect-email-addres-javascript-data-attr.html)
 - [Accordion from Tutorial jQuery 30 days] (javascript/accordion-jquery-30.html)
+- [Responsive Equal Height] (javascript/responsive-equal-height.html)
