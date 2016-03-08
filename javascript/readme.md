@@ -7,3 +7,5 @@ screenshot/accordion.jpg
 - [Extragere TVA 20% si afisare valoare fara TVA si valoarea TVA] (calcul-extragere-tva-20.html)
 - [Protect Email Adress: JavaScript Function] (protect-email-adress-javascript.html)
 - [Protect Email Adress: Data Attribute] (protect-email-addres-javascript-data-attr.html)
+- [Accordion from Tutorial jQuery 30 days] (accordion-jquery-30.html)
+	![AltText](screenshot/accordion.jpg)

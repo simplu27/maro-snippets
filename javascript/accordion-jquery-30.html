@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Accordion from Tutorial jQuery 30 days</title>
+
+<meta name="viewport" content="wih3h=device-wih3h, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- ============	CSS		============ -->
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+
+<style>
+html{overflow-y: scroll;}
+body {font-family: "open sans", "helvetica neue", helvetica, arial, sans-serif;
+	color: #444; font-size: 14px; line-height: 20px; padding: 30px;}
+/* ========================================= */
+.acc {
+	display: block;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.acc-title {
+	font-weight: bold;
+	font-size: 16px;
+	padding: 10px 0 10px 10px;
+	margin: 0;
+	background: #53A7EA;
+	color: #F9F9F9;
+	border-top: 1px solid #7FC9FF;
+	border-bottom: 1px solid #2B77AF;
+	cursor: pointer;
+	text-shadow: 1px 1px 0 rgba(39, 108, 159, .6)
+}
+
+.acc-title:first-child {border-top: none;}
+.acc-title:nth-last-child(2) {border-bottom: none;} 
+
+.acc-content {
+	margin: 0;
+	padding: 1em;
+	background: #FFF;
+}
+
+.acc-content:last-child {border-bottom: 2px solid #2B77AF;}
+
+.hide {display: none;}
+
+</style>
+
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT		============ -->
+
+<div class="acc">
+
+	<h3 class="acc-title">Cropsum dolor sit amet.</h3>
+	<div class="acc-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!</p>
+	</div>
+	
+	<h3 class="acc-title">Explicabo voluptatibus?</h3>
+	<div class="acc-content">
+		<h4>Dignissimos, quod cupiditate</h4>
+		<p>Inventore, quod, optio, porro totam ipsa nulla ducimus fugiat consequatur iure amet non iste alias nam. Vel, et, consectetur fugit placeat esse laudantium modi rerum eaque vitae dolore aut nisi quaerat dolores. Inventore, veniam commodi eaque assumenda possimus sed qui saepe quasi.</p>
+	</div>
+	
+	<h3 class="acc-title">Abcaecati quae odit recusandae</h3>
+	<div class="acc-content">
+		<p>Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!</p>
+	</div>
+	
+	<h3 class="acc-title">Cropsum dolor sit amet.</h3>
+	<div class="acc-content">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quod cupiditate dicta obcaecati quae odit recusandae illo nihil sit a!</p>
+	</div>
+	
+	<h3 class="acc-title">Explicabo voluptatibus?</h3>
+	<div class="acc-content">
+		<p>Inventore, quod, optio, porro totam ipsa nulla ducimus fugiat consequatur iure amet non iste alias nam. Vel, et, consectetur fugit placeat esse laudantium modi rerum eaque vitae dolore aut nisi quaerat dolores. Inventore, veniam commodi eaque assumenda possimus sed qui saepe quasi.</p>
+	</div>
+	
+</div><!-- acc -->
+
+<!-- ============	/CONTENT	============ -->
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+(function() {
+		
+	// hide div except first div
+	$('.acc-content').filter(':nth-child(n+4)').addClass('hide');
+	
+	$('.acc').on('click', '.acc-title', function(){
+		$(this)
+			.next()
+				.slideDown(300)
+				.siblings('.acc-content').slideUp(300);
+	});
+		
+})();
+</script>
+</body>
+</html>
