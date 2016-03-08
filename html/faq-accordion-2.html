@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>jQuery Accordion Demo</title>
+<style>
+	* { margin:0; padding:0; font-family:sans-serif; }
+	html {overflow-y: scroll;}
+	.demo {width: 600px; margin: 30px auto; }
+
+	.head, li, h3 { margin-bottom:15px; }
+
+	.head { 
+		font-size:18px; 
+		display:block;
+		cursor: pointer;
+		background: #EFEFEF;
+		padding: 5px 5px 5px 20px;
+		margin-bottom: 5px;
+	}
+	
+	.plus { background: red;}
+
+	.content { 
+		background: #F2F2F2;
+		padding: 20px;
+	}
+
+	.faq li {
+		position:relative;
+		overflow:hidden;
+		list-style: none;
+	}
+</style>
+</head>
+<body>
+<div class="demo">
+
+	<h3>http://www.jacklmoore.com/notes/jquery-accordion-tutorial</h3>
+	
+	<ul class='faq'>
+		<li>
+			<div class="head">Heading 1</div>
+			<div class='content'>
+				<h3>Text de proba</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus varius urna, ac venenatis arcu convallis consequat. In augue est, posuere auctor facilisis varius, dictum ac risus. Donec nibh justo, aliquam sed tempus quis, lobortis sed orci. Aliquam condimentum, erat eget luctus commodo, mauris velit porta nulla, cursus placerat lectus tortor ac enim. Phasellus scelerisque luctus ligula, a consequat orci posuere rutrum. Sed ipsum nisi, ullamcorper eget fermentum a, dignissim sed dolor. Nam arcu nulla, aliquam non molestie vitae, condimentum at lorem. Nam et consectetur augue.</p>
+			</div>
+		</li>
+		<li>
+			<div class='head'>Heading 2</div>
+			<div class='content'>
+				<p>Vivamus id elementum risus. In sit amet mi nulla, ac sollicitudin odio. Phasellus laoreet leo vitae velit lobortis at condimentum odio placerat. Nam sapien eros, accumsan id porttitor a, commodo ut urna. Cras dignissim metus quis enim placerat lobortis.</p>
+
+				<p>Nam arcu nulla, aliquam non molestie vitae, condimentum at lorem. Nam et consectetur augue. Phasellus varius ligula ac dui porta ullamcorper. Aliquam nunc sapien, hendrerit at adipiscing vel, ornare at justo. Nam vitae velit aliquet erat fringilla imperdiet. Phasellus diam urna, consectetur sit amet lacinia at, consequat non neque.</p>
+			</div>
+		</li>
+		<li>
+			<div class='head'>Heading 3</div>
+			<div class='content'>
+				<p>Phasellus scelerisque luctus ligula, a consequat orci posuere rutrum. Sed ipsum nisi, ullamcorper eget fermentum a, dignissim sed dolor. Mauris viverra pretium ante, eu mollis nisi volutpat quis. Nunc neque erat, pharetra in feugiat eget, faucibus id sem. Vivamus id elementum risus. In sit amet mi nulla, ac sollicitudin odio. Phasellus laoreet leo vitae velit lobortis at condimentum odio placerat. Nam sapien eros, accumsan id porttitor a, commodo ut urna. Cras dignissim metus quis enim placerat lobortis.</p>
+			</div>
+		</li>
+	</ul>
+	
+</div> <!-- .demo -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+	$('.content').css('display','none'); // if no js, still display content
+	$('.faq').first('.content').css('display','block');
+	
+	var $open = $();
+	$('.head').click(function(e){
+	e.preventDefault();
+	$open.slideUp();
+	$open = $(this).closest('li').find('.content');
+	$open.not(':animated').slideToggle().toggleClass('plus');
+	});
+});
+</script>
+</body>	
+</html>

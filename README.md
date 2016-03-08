@@ -14,7 +14,8 @@ CSS, HTML, JS, Apache snippets
 - [Basic html document] (html/basic-html5-doc.html)
 - [Smooth Scrolling To Internal Links With jQuery] (html/scroll-to-link.html)
 - [Smooth Scrolling To Top With jQuery] (html/scroll-to-top.html)
-- [Responsive Equal Height] (javascript/responsive-equal-height.html)
+- [FAQ Accordion 1] (html/faq-accordion-1.html)
+- [FAQ Accordion 2] (html/faq-accordion-2.html)
 
 ## PHP Snippets
 
