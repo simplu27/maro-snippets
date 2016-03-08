@@ -1,0 +1,54 @@
+<!-- 
+
+Setting Up a 503 ’Service Unavailable’ Status
+
+(From book: Wordpress Pushing the Limits - McCollin, Rachel)
+
+The simplest way to do this on a WordPress site is by using a plugin. Plugins such as Site Maintenance
+(http://wordpress.org/extend/plugins/wet-maintenance/) and Ultimate Coming Soon
+(http://wordpress.org/extend/plugins/ultimate-coming-soon-page/) include the option
+to set up a 503 redirect, which directs visitors to your teaser page and informs search engines that the site is
+temporarily unavailable and has not disappeared in a puff of smoke. 
+
+What if you don’t want to use a plugin, or you’re developing a teaser page or site outside of WordPress? It’s still
+pretty simple—follow these steps:
+
+	1. Create a blank file called 503.php in the root directory of your domain.
+	2. Type the following code into the blank file:
+			<?php
+				header(“HTTP/1.1 503 Service Temporarily Unavailable”);
+				header(“status: 503 Service temporarily Unavailable”);
+				header(“Retry-After: Mon 1 April 2013 00:00 GMT”);
+			?>
+		The preceding code tells search engines that the site is temporarily unavailable and specifies when to crawl
+		the site again. This information is output in the HTTP response headers before any page content is returned
+		and won’t be visible to visitors.
+	3. Open the .htaccess file in your root directory (if you don’t have one, create one), and add the following to it:
+
+			<IfModule mod_rewrite.c>
+				ErrorDocument 503 /503.php
+				RewriteEngine on
+				RewriteBase /
+				RewriteCond %{ENV:REDIRECT_STATUS} !=503
+				RewriteCond %{REMOTE_HOST} !^111\.111\.111\.111$
+				RewriteCond %{REQUEST_URI} !robots\.txt$ [NC]
+				RewriteRule ^ - [L,R=503]
+			</IfModule>
+
+	4. Save both files and access your site in a browser. You will see a blank screen.
+
+	5. You need to tell visitors what’s going on. To do this, simply add some markup to the 503.php file, such as the following:
+		<!DOCTYPE HTML>
+		<html>
+			<head>
+			<title>Error 503 service temporarily unavailable</title>
+			</head>
+			<body>
+				<h1>This site is being redeveloped</h1>
+			<p>Please come back soon to see our fabulous new site!</p>
+			</body>
+		</html>
+
+	6. Save the file, return to your site, and refresh the browser. You’ll now see something more useful,
+
+-->

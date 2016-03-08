@@ -21,6 +21,7 @@ CSS, HTML, JS, Apache snippets
 - [Active class for menu] (php/active-class-function.php)
 - [Last modification time for current file] (php/get-last-modif-time.php)
 - [Set timezone to Europe/Bucharest] (php/get-last-modif-time.php)
+- [503 Temporary Redirect] (php/temporary-php-503-redirect.php)
 
 ## Apache Snippets
 
@@ -31,9 +32,12 @@ CSS, HTML, JS, Apache snippets
 - [301 Redirect] (apache/redirect-301.conf)
 - [Block IP Address in .htaccess] (apache/block-ip-address.conf)
 - [Directory Browsing: Prevent or Allow] (apache/directory-browsing.conf)
+- [503 Service Unavailable] (apache/503 Service Unavailable.html)
 
 ## JavaScript / jQuery
 
 - [Open external links in new tab] (javascript/open-external-links-new-tab.js)
 - [Prevent right clicking] (javascript/prevent-right-clicking.js)
 - [Extragere TVA 20% si afisare valoare fara TVA si valoarea TVA] (javascript/calcul-extragere-tva-20.html)
+- [Protect Email Adress: JavaScript Function] (javascript/protect-email-adress-javascript.html)
+- [Protect Email Adress: Data Attribute] (javascript/protect-email-addres-javascript-data-attr.html)

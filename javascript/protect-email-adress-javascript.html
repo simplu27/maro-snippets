@@ -1,0 +1,16 @@
+<script>
+function makeLink(user,domain,domain_end){
+	// user = contact, domain = yahoo, domain_end = com
+	// contact@yahoo.com
+	document.write(
+	'<a class="xlink" href="mailto:'+user+'@'+domain+'.'+domain_end+'">'+user+'@'+domain+'.'+domain_end+'</a>'
+	);
+}
+</script>
+
+<!-- In html vine: -->
+<p><script>makeLink('contact','yahoo','com');</script></p>
+<!-- Returneaza: <a class="xlink" href="mailto:contact@yahoo.com">contact@yahoo.com</a>  -->
+
+<p><script>makeLink('gigel','mysite','ro');</script></p>
+<!-- Returneaza: <a class="xlink" href="mailto:gigel@mysite.ro">gigel@mysite.ro</a>  -->

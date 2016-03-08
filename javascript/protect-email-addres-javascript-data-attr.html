@@ -1,0 +1,36 @@
+<!-- Lynda - Design the Web Creating and Protecting Email Links -->
+
+<p><a href="#" class="xlink" data-xlink1="feedback" data-xlink2="exemplu" data-xlink3="com">Email me</a></p>
+
+<!-- Will return: <a href="mailto:feedback@exemplu.com" class="xlink">feedback@exemplu.com</a> -->
+
+<script type="text/javascript">
+	
+	// cauta toate elementele care au clasa xlink
+	var elinks = document.getElementsByClassName('xlink');
+	// afla cate adrese de email sunt de inlocuit
+	var total_elinks = elinks.length;
+
+	// Pentru fiecare link de email
+	for( var i=0; i < total_elinks; i++ ){
+
+		// part1 = feedback
+		var part1 = elinks[i].getAttribute('data-xlink1');
+		// part2 = exemplu
+		var part2 = elinks[i].getAttribute('data-xlink2');
+		// part3 = com
+		var part3 = elinks[i].getAttribute('data-xlink3');
+
+		// Concateneaza toate data-attribute si transforma in adresa de email:
+		// Pune adresa de email intr-o variabila: newAddress
+		var newAddress = part1+'@'+part2+'.'+part3;
+
+		// Inlocuieste semnul "#" din adresa html cu:
+		// mailto:feedback@exemplu.com
+		elinks[i].setAttribute('href','mailto:'+newAddress);
+
+		// Inlocuieste si textul (Email me) cu adresa de email (feedback@exemplu.com)
+		elinks[i].innerHTML = newAddress;
+	}
+
+</script>
