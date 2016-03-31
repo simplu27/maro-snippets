@@ -9,11 +9,43 @@
 <style>
 	body {font-size: 16px; font-family: Arial, sans-serif; color: #565656; }
 	.center {max-width: 600px; margin: 30px auto;}
+
+	.box {
+		width: 48%;
+		float: left;
+		box-sizing: border-box;
+		padding: 20px;
+	}
+
+	#box1 {background: #E9F2E6; margin-right: 4%;}
+	#box2 {background: #EFEFEF; }
+
 	input {font-size: 18px; }
 	p.result span {color: red;}
 	p.tva span {color: green;}
-	p.plustva {border-top: 1px solid #333; padding-top: 6px;}
+	p.plustva {/*border-top: 1px solid #333;*/ padding-top: 6px;}
 	p.plustva span {color: blue;}
+
+	p span {
+		font-weight: bold;
+		display: inline-block;
+		margin-left: 15px;
+		padding: 4px 8px;
+		background: #FFF;
+	}
+	
+	#input1 {
+		text-align: right;
+		padding-right: 15px;
+		background: #FFF0D8;
+	}
+
+	span.pret {
+		display: inline-block;
+		margin-left: 20px;
+		background: #FFF;
+		padding: 5px 12px;
+	}
 </style>
 <!--[if lt IE 9]>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
@@ -25,11 +57,20 @@
 
 <div class="center">
 	<p>Introduceti pretul: <input type="text" id="input1"></p>	
-	<br>
-	<p class="result">Pret fara TVA [-20%]: <span style="font-weight: bold;"></span></p>
-	<p class="tva">Valoare TVA [20%]: <span style="font-weight: bold;"></span></p>
-	<p class="plustva">Valoare cu TVA [20%]: <span style="font-weight: bold;"></span></p>
-	<!-- <p class="tva2">Valoare (calcul direct): <span style="font-weight: bold;"></span></p> -->
+	
+	<div class="box" id="box1">
+		<h3>Extragere TVA din <span class="pret"></span></h3>
+		<p class="result">Pret fara TVA [-20%]: <span></span></p>
+		<p class="tva">Valoare TVA [20%]: <span></span></p>
+	</div>
+	
+	<div class="box" id="box2">
+		<h3>Adaugare TVA la <span class="pret"></span></h3>
+		<p class="plustva">Valoare cu TVA [20%]: <span></span></p>
+		<p class="adatva">Valoare TVA [20%]: <span></span></p>
+	</div>
+	
+	<!-- <p class="tva2">Valoare (calcul direct): <span></span></p> -->
 </div><!-- center -->
 <!-- ============	CONTENT END		============ -->
 
@@ -48,10 +89,17 @@
 			var tva = valCuTva - minustva;
 			// adauga TVA 20% la valoarea introdusa
 			var plustva = valCuTva * 1.2;
+
+			// valoare TVA, daca se adauga
+			var adatva = plustva - valCuTva;
+
 			// se afiseaza vaoarea fara TVA si valoarea TVA, cu 2 zecimale (.toFixed(2))
 			$( "p.result span" ).text( minustva.toFixed(2) );
 			$( "p.tva span" ).text( tva.toFixed(2) );
 			$( "p.plustva span" ).text( plustva.toFixed(2) );
+			$( "p.adatva span" ).text( adatva.toFixed(2) );
+
+			$( ".pret" ).text( valCuTva );
 		})
 	// se executa functia
 	.keyup();
