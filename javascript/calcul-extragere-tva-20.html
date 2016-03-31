@@ -12,6 +12,8 @@
 	input {font-size: 18px; }
 	p.result span {color: red;}
 	p.tva span {color: green;}
+	p.plustva {border-top: 1px solid #333; padding-top: 6px;}
+	p.plustva span {color: blue;}
 </style>
 <!--[if lt IE 9]>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
@@ -22,9 +24,11 @@
 <!-- ============	CONTENT INIT	============ -->
 
 <div class="center">
-	<p>Pret cu TVA: <input type="text" id="input1"></p>	
+	<p>Introduceti pretul: <input type="text" id="input1"></p>	
+	<br>
 	<p class="result">Pret fara TVA [-20%]: <span style="font-weight: bold;"></span></p>
 	<p class="tva">Valoare TVA [20%]: <span style="font-weight: bold;"></span></p>
+	<p class="plustva">Valoare cu TVA [20%]: <span style="font-weight: bold;"></span></p>
 	<!-- <p class="tva2">Valoare (calcul direct): <span style="font-weight: bold;"></span></p> -->
 </div><!-- center -->
 <!-- ============	CONTENT END		============ -->
@@ -42,9 +46,12 @@
 			var minustva = valCuTva / 1.2;
 			// valoarea TVA = valoarea cu TVA minus valoarea fara TVA
 			var tva = valCuTva - minustva;
+			// adauga TVA 20% la valoarea introdusa
+			var plustva = valCuTva * 1.2;
 			// se afiseaza vaoarea fara TVA si valoarea TVA, cu 2 zecimale (.toFixed(2))
 			$( "p.result span" ).text( minustva.toFixed(2) );
 			$( "p.tva span" ).text( tva.toFixed(2) );
+			$( "p.plustva span" ).text( plustva.toFixed(2) );
 		})
 	// se executa functia
 	.keyup();
