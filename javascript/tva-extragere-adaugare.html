@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TVA : Extragere sau adaugare</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	body {font-size: 14px; font-family: Arial, sans-serif; color: #565656; }
+	.center {max-width: 400px; margin: 30px auto;}
+	input {font-size: 16px; }
+	p.result span {color: red;}
+	p.tva span {color: green;}
+	.center input {text-align: right; padding: 2px 8px; }
+	h4 {border-bottom: 1px solid #CFCFCF; padding-bottom: 4px;}
+</style>
+</head>
+<body>
+
+<!-- Extragere TVA din pretul introdus -->
+
+<div class="center">
+	<h4>Extragere TVA</h4>
+	<table>
+		<tr>
+			<td>Pret cu TVA:</td>
+			<td><input type="text" id="input2"></td>
+		</tr>
+		<tr>
+			<td>Pret fara TVA (-20%)</td>
+			<td><input type="text" id="faratva" disabled></td>
+		</tr>
+		<tr>
+			<td>Valoare TVA (20%)</td>
+			<td><input type="text" id="valoareTva" disabled></td>
+		</tr>
+	</table>
+</div><!-- center -->
+
+<!-- Adaugare TVA la pretul introdus -->
+
+<div class="center">
+	<h4>Adaugare TVA</h4>
+	<table>
+		<tr>
+			<td>Pret fara TVA:</td>
+			<td><input type="text" id="pretFaraTva"></td>
+		</tr>
+		<tr>
+			<td>Pret cu TVA (+20%)</td>
+			<td><input type="text" id="adaugaTva" disabled></td>
+		</tr>
+		<tr>
+			<td>Valoare TVA (20%)</td>
+			<td><input type="text" id="valoareTvaAdaugata" disabled></td>
+		</tr>
+	</table>
+</div><!-- center -->
+
+<!-- ===========	JS 	=========== -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
+<script>
+	// Adaugare TVA
+
+	$('#pretFaraTva').keyup(function(){
+		// se preia din input valoarea fara TVA
+		var pretFaraTva = $(this).val();
+		// adauga tva 20% la pretFaraTva
+		var adaugaTva = pretFaraTva * 1.2;
+		// din valoarea cu TVA se scade valoarea initiala
+		// ca sa se afle valoarea TVA
+		var valoareTvaAdaugata = adaugaTva - pretFaraTva;
+
+		// se afiseaza valorile
+		$('#adaugaTva').val(adaugaTva.toFixed(2));
+		$('#valoareTvaAdaugata').val(valoareTvaAdaugata.toFixed(2));
+	})
+	// Se initiaza functia:
+	.keyup();
+
+	// Extragere TVA
+
+	$('#input2').keyup(function(){
+		// Pentru extragere tva
+		// Se preia valoarea din input: pretCuTva
+		var pretCuTva = $(this).val();
+		// Se scade tva 20% din pretCuTva
+		var pretFaraTva = pretCuTva / 1.2;
+		// Se afla valoarea tva
+		var valoareTva = pretCuTva - pretFaraTva;
+
+		// Se afiseaza valorile
+		// Pret fara tva:
+		$('#faratva').val(pretFaraTva.toFixed(2));
+		// Valoarea tva
+		$('#valoareTva').val(valoareTva.toFixed(2));
+	})
+	// Se initiaza functia:
+	.keyup();
+
+	$("input").keyup(function(){
+        $(this).css("background-color", "#FFFFDF");
+    });
+
+</script>
+</body>
+</html>
