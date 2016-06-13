@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Scroll to top</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link rel="stylesheet" href="style.css" media="screen" />
+
+<style>
+	body {
+		font-family: Arial;
+		font-size: 14px;
+		background: #ECECEA;
+		margin: 20px;
+	}
+	
+	.wrap {
+		width: 70%;
+		margin: 0 auto;
+		padding: 30px;
+		background: #FFF;
+	}
+	
+	pre {
+		padding: 20px;
+		background: #EFEFEF;
+		overflow-x: auto;
+	}
+	
+	.scrollup{
+		width:40px;
+		height:40px;			
+		color: #FFF;
+		background: #333;
+		opacity:0.8;
+		text-align: center;
+		font-size: 30px;
+		font-weight: bold;
+		line-height: 30px;
+		position:fixed;
+		bottom: 20px;
+		right:20px;
+	}
+	
+	.scrollup:hover {opacity: 0.7;}
+
+</style>
+	
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script>  
+$(document).ready(function(){  
+	$(window).scroll(function(){
+		if ($(this).scrollTop() > 200) {
+			$('.scrollup').fadeIn();
+		} else {
+			$('.scrollup').fadeOut();
+			}
+		}); 
+			
+		$('.scrollup').click(function(){
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			return false;
+	});
+});  
+</script>
+
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+
+<body>
+<div class="wrap">
+	<h2>Scroll to top</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+	
+	<h3>Another Headings</h3>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos harum minima architecto ea ipsa aut voluptatibus quam ab modi molestias soluta facere quibusdam ipsum tenetur id eius placeat animi aperiam.</p>
+</div><!-- #wrap -->
+	
+	<a href="#" class="scrollup" title="Scroll to top">&uarr;</a>
+
+</body>
+</html>
