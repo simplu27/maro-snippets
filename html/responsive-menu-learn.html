@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>RWD from tutorial</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.0" >
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- ============	CSS		============ -->
+<link rel="stylesheet" media="screen" href="reset.css">
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<style>
+	/* HTML5 Reset */
+	html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, time, mark, audio, video, details, summary {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		vertical-align: baseline;
+		background: transparent;
+	}									
+	article, aside, figure, footer, header, hgroup, nav, section, details, summary {display: block;}
+	/* Responsive images and other embedded objects
+	   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+	   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+	img,
+	object,
+	embed {max-width: 100%;}
+	img {height: auto; max-width: 100%; width: auto;}
+	/* force a vertical scrollbar to prevent a jumpy page */
+	html {overflow-y: scroll;}
+	/* we use a lot of ULs that aren't bulleted. 
+		don't forget to restore the bullets within content. */
+	ul {list-style: none;}
+	blockquote, q {quotes: none;}
+	blockquote:before, 
+	blockquote:after, 
+	q:before, 
+	q:after {content: ''; content: none;}
+	a {margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
+	del {text-decoration: line-through;}
+	abbr[title], dfn[title] {border-bottom: 1px dotted #000; cursor: help;}
+	/* tables still need cellspacing="0" in the markup */
+	table {border-collapse: collapse; border-spacing: 0;}
+	th {font-weight: bold; vertical-align: bottom;}
+	td {font-weight: normal; vertical-align: top;}
+	hr {display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0;}
+	input, select {vertical-align: middle;}
+	pre {
+		white-space: pre; /* CSS2 */
+		white-space: pre-wrap; /* CSS 2.1 */
+		white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */
+		word-wrap: break-word; /* IE */
+	}
+	input[type="radio"] {vertical-align: text-bottom;}
+	input[type="checkbox"] {vertical-align: bottom;}
+	.ie7 input[type="checkbox"] {vertical-align: baseline;}
+	.ie6 input {vertical-align: text-bottom;}
+	select, input, textarea {font: 99% sans-serif;}
+	table {font-size: inherit; font: 100%;}
+	small {font-size: 85%;}
+	strong {font-weight: bold;}
+	td, td img {vertical-align: top;} 
+	/* Make sure sup and sub don't screw with your line-heights
+		gist.github.com/413930 */
+	sub, sup {font-size: 75%; line-height: 0; position: relative;}
+	sup {top: -0.5em;}
+	sub {bottom: -0.25em;}
+	/* standardize any monospaced elements */
+	pre, code, kbd, samp {font-family: monospace, sans-serif;}
+	/* hand cursor on clickable elements */
+	.clickable,
+	label, 
+	input[type=button], 
+	input[type=submit], 
+	button {cursor: pointer;}
+	/* Webkit browsers add a 2px margin outside the chrome of form elements */
+	button, input, select, textarea {margin: 0;}
+	/* make buttons play nice in IE */
+	button {width: auto; overflow: visible;}
+	/* scale images in IE7 more attractively */
+	.ie7 img {-ms-interpolation-mode: bicubic;}
+	/* prevent BG image flicker upon hover */
+	.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+	/* let's clear some floats */
+	.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+	.clearfix:after { clear: both; }  
+	.clearfix { zoom: 1; }  
+	/* let's clear some rows */
+	.row:before, .row:after { content: "\0020"; display: block; height: 0; overflow: hidden; }  
+	.row:after { clear: both; }  
+	.row { zoom: 1; }
+	/* Reset End */
+
+	html{overflow-y: scroll;}
+	body {
+		font-family: "Open Sans", "helvetica neue", helvetica, arial, sans-serif;
+		color: #444;
+		font-size: 14px;
+		line-height: 20px;
+	}
+	img {max-width: 100%; height: auto; border: 0;}
+	a {text-decoration: none; outline: none;}
+
+	/* ========================================= */
+
+	/* WIDTH SETTING */
+
+	.center,
+	.nav-hold {
+		width: 95%;
+		max-width: 800px;
+		margin: 0 auto;
+	}
+
+	/* NAVIGATION */
+
+	.nav-bar {
+		width: 100%;
+		background: #222;
+	}
+
+	.nav-hold {
+		overflow: hidden;
+	}
+
+	.nav-logo {
+		float: left;
+		display: block;
+		padding: 20px 10px;
+		color: #F9F9F9;
+		font-weight: 700;
+	}
+
+	.nav-list {
+		float: right;
+	}
+
+	.nav-list li {
+		float: left;
+	}
+
+	.nav-list li a {
+		display: block;
+		padding: 20px 10px;
+		color: #F9F9F9;
+	}
+
+	.nav-list li a:hover {
+		background: #EE4938;
+	}
+
+	.nav-menu {
+		display: none;
+	}
+
+	
+	/* IE10 Viewport Fix */
+	@-ms-viewport {width: device-width;}
+	@viewport {width: device-width;}
+
+	/* PHONE 767px */
+	@media screen and (max-width: 767px) {
+
+	.nav-menu {
+		float: right;
+		display: block;
+		color: #F9F9F9;
+		padding: 20px 10px;
+		cursor: pointer;
+	}
+
+	.nav-list {
+		float: left;
+		width: 100%;
+		overflow: hidden;
+		height: 0;
+	}
+
+	.nav-open {
+		height: auto; 
+	}
+
+	.nav-list li {
+		width: 100%;
+	}
+
+	.nav-list li a {
+		padding: 10px;
+	}
+
+	} /* media */
+</style>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT		============ -->
+
+<nav class="nav-bar">
+	<div class="nav-hold">
+		<a href="#" class="nav-logo">Super Logo</a>
+		<a id="nav-menu" class="nav-menu">Menu<!-- &#9776; --></a>
+		<!-- <ul class="nav-list nav-open" id="nav"> -->
+		<ul class="nav-list" id="nav">
+			<li><a href="#about">About Me</a></li>
+			<li><a href="#gallery">Gallery</a></li>
+			<li><a href="#lorem">Lorem</a></li>
+			<li><a href="#lorem">System</a></li>
+			<li><a href="#contact">Contact</a></li>
+		</ul>
+	</div><!-- nav-holder -->
+</nav><!-- nav-bar -->
+
+<div class="center"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat, officia, porro ratione dolorum est a et suscipit consequatur dicta praesentium repellat facere aperiam sapiente at exercitationem reiciendis quam quisquam similique tenetur laboriosam cumque cupiditate quas perspiciatis voluptates consequuntur itaque enim aut. Consequuntur, quam, laudantium architecto expedita debitis voluptate repellendus vitae similique deserunt dignissimos non incidunt omnis totam animi molestiae corporis veritatis autem. Nostrum, consequatur, dicta, quasi praesentium quia maxime non architecto minus voluptatibus ipsum recusandae cum culpa beatae a similique quidem eum dolorum dolores hic iste vel itaque ad. Vitae, sunt modi assumenda earum exercitationem numquam pariatur debitis vel atque officiis illo minus commodi omnis cum maiores sit dignissimos amet quia odio nisi neque porro adipisci! Adipisci, cum, consequuntur quibusdam minima esse illum provident veniam quis illo doloremque officiis voluptate rerum voluptatum magni omnis? Sint, tempore, molestiae, quaerat doloribus ipsum non similique aspernatur ratione excepturi dicta placeat quidem quo consequuntur cumque aliquam provident laborum deserunt odit alias accusamus. Animi, itaque iure excepturi pariatur! Qui, facere, ipsam, ullam, eius eos ea maiores voluptate repudiandae animi pariatur non possimus eligendi quisquam veniam aliquid nisi recusandae earum commodi in esse cum placeat consequatur natus saepe tempore expedita harum minima est fugiat dolor. Vitae, voluptas, ipsa, id, nisi optio similique odit rem quo maxime aliquid eveniet sint nam deleniti dicta blanditiis animi vel! Dolores, ducimus necessitatibus id assumenda adipisci delectus aperiam rem ipsum atque hic quibusdam ab temporibus fugiat quam reprehenderit officiis tenetur cumque nihil alias porro eligendi modi sapiente harum voluptate facere minus vitae quisquam cum optio in. Facilis, odio, magnam recusandae placeat voluptatem quod perspiciatis delectus nobis laborum magni impedit velit qui eius dolorem quisquam eum adipisci quidem commodi doloribus assumenda maiores ullam eligendi corporis optio aperiam fugiat labore mollitia veniam quam. Quibusdam, natus, asperiores officia blanditiis voluptas temporibus quos quo recusandae maiores accusantium facilis provident dolorum nisi esse quae fugit nulla eligendi unde eos dolor culpa quia in placeat fuga error assumenda cumque cupiditate magni nemo? Culpa tempore ex ipsum. Tenetur, quod, excepturi, quas, ipsam doloremque fuga ea rerum expedita nulla nemo qui deserunt voluptas libero ullam corporis a molestiae. Ipsa cum tempora reprehenderit illum! Facilis minima ullam veniam obcaecati nihil repudiandae nostrum aliquid minus vitae odio. Explicabo, dicta eligendi molestias eveniet laboriosam praesentium vitae debitis odit numquam provident voluptas delectus corporis optio aliquam deserunt vel quisquam deleniti dolores vero temporibus inventore dolorum est? Sed, corporis, asperiores, assumenda et dolores eum est illum esse ullam provident soluta accusantium adipisci vel at ipsum vitae id modi odio obcaecati sapiente consequatur quidem deleniti accusamus magni dolor tempora commodi voluptatum expedita amet! Recusandae, error culpa illo alias voluptatum earum debitis eos reprehenderit amet aperiam eveniet adipisci nesciunt. Modi, distinctio, aperiam cum consectetur ratione dolorum ab maxime corporis adipisci magni expedita rem doloremque velit dolores qui. Vel, perspiciatis, quaerat possimus repudiandae voluptate explicabo ea modi ab culpa accusantium quo iste molestias laudantium optio inventore. Iste, facilis, amet iure provident saepe nesciunt nisi dicta quaerat explicabo eveniet labore repudiandae! Atque, et repellendus sed sit corporis voluptas!</p></div>
+
+
+<!-- ============	/CONTENT	============ -->
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+	$(document).ready(function(){  
+  
+	var n = '#nav', no = 'nav-open'; 	
+	// ul.nav-open / under 767px
+
+	$('#nav-menu').click(function() {
+		if ($(n).hasClass(no)) {
+			$(n).animate({height: 0}, 300);
+			setTimeout(function() {
+				$(n).removeClass(no).removeAttr('style');
+			}, 320);
+		} else {
+			// $(n).addClass(no);
+			var newH = $(n).css('height','auto').height();
+			$(n).height(0).animate({height: newH}, 300);
+			
+			setTimeout(function() {
+				$(n).addClass(no).removeAttr('style');
+			}, 320)
+		}  //else
+	});
+	
+	// if menu is open and click anywere in the page
+	// close menu
+	/*
+	$(document).click(function() {
+		if ($(n).hasClass(no)) {
+			$(n).animate({height: 0}, 300);
+			setTimeout(function() {
+				$(n).removeClass(no).removeAttr('style');
+			}, 320);
+		}
+	});
+	*/
+});  //end ready
+
+</script>
+</body>
+</html>
