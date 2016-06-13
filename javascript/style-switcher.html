@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Style Switcher CSS JQ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ============	CSS		============ -->
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+	padding: 20px 50px;
+}
+
+/* Normal styles */
+h1{
+    text-shadow: 2px 2px gray;
+}
+
+img{
+    float: right;
+    width: 250px;
+    padding-left: 20px;
+}
+
+/* High contrast */
+body.high-contrast{
+    background-color: DarkBlue;
+    color: yellow
+}
+
+body.high-contrast h1{
+    text-shadow: none;
+}
+
+/* Print */
+body.print h1{
+    text-shadow: none;
+}
+
+body.print img{
+    display: none;
+}
+
+</style>
+<!--[if lt IE 9]>
+<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- CONTENT -->
+
+<h1>My Awesome Heading</h1>
+
+<img src="http://i.imgur.com/AX0gATA.jpg" />
+
+<p>Bacon ipsum dolor sit amet chicken hamburger short ribs strip steak tenderloin, bresaola kevin fatback frankfurter. Pancetta t-bone ham hock, pork loin andouille sirloin pork chop kielbasa tongue. Flank shoulder porchetta chicken, short loin ham hock sausage frankfurter. Shank meatloaf porchetta short loin chicken, jowl tail flank frankfurter pig. Tri-tip biltong ribeye t-bone flank beef ribs landjaeger meatloaf tenderloin andouille drumstick kevin venison jerky. Pork chop pastrami bresaola jerky shank pork loin tail capicola venison beef ribs ham hock spare ribs filet mignon ham ribeye. Tail pork belly jerky, kielbasa tenderloin bacon ball tip short loin beef chuck prosciutto.</p>
+<img src="http://i.imgur.com/FA3tUYb.gif" alt="">
+
+<p><img src="http://i.imgur.com/ZWcrZhw.gif" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, culpa architecto voluptatum debitis sint blanditiis beatae id impedit accusantium minus voluptatibus asperiores cum quidem voluptatem ipsa officiis unde quos alias est inventore aliquid libero eveniet perferendis fuga mollitia? Neque nesciunt repellendus ipsa explicabo eaque vero natus ex ut modi dolorem.</p>
+
+<label for="styleSwitcher">Choose a style: </label>
+<select id="styleSwitcher">
+    <option value="normal">Normal</value>
+    <option value="high-contrast">High Contrast</value>
+    <option value="print">Print</value>
+</select>
+
+<!-- CONTENT -->
+
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>  
+// Cross browser addEvent function by John Resig
+// http://ejohn.org/blog/flexible-javascript-events/
+function addEvent(obj, type, fn) {
+    if (obj.attachEvent) {
+        obj['e' + type + fn] = fn;
+        obj[type + fn] = function () {
+            obj['e' + type + fn](window.event);
+        }
+        obj.attachEvent('on' + type, obj[type + fn]);
+    } else obj.addEventListener(type, fn, false);
+}
+
+function trigger(action, el){
+  if (document.createEvent) {
+    var event = document.createEvent('HTMLEvents');
+    event.initEvent(action, true, false);
+    el.dispatchEvent(event);
+  } else {
+    el.fireEvent('on' + action);
+  }    
+}
+
+function switchStyles(){
+    var selectedOption = this.options[this.selectedIndex],
+        className = selectedOption.value;
+        
+    document.body.className = className;
+    localStorage.setItem("bodyClassName", className);    
+}
+
+var styleSwitcher = document.getElementById("styleSwitcher");
+addEvent(styleSwitcher, "change", switchStyles);
+
+var storedClassName = localStorage.getItem("bodyClassName");
+if (storedClassName){
+    for(var i=0; i < styleSwitcher.options.length; i++){
+        if (styleSwitcher.options[i].value === storedClassName){
+            styleSwitcher.selectedIndex = i;
+            trigger("change", styleSwitcher);
+        }
+    }
+}
+</script>
+</body>
+</html>
