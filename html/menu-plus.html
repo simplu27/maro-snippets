@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Menu Plus</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ============	CSS		============ -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html{overflow-y: scroll; margin: 0; padding: 0;}
+	body {
+		font-family: "open sans", "helvetica neue", helvetica, arial, sans-serif;
+		color: #333;
+		font-size: 14px;
+		background: #F5F5F5;
+	}
+	img {max-width: 100%; height: auto; border: 0;}
+	a {text-decoration: none; outline: none;}
+
+	[class^=fa] { font-family: FontAwesome; }
+
+	/* ========================================= */
+
+	#menu-container {
+		width: 100%;
+		background: #FFF;
+		height: 40px;
+		box-shadow: 1px 0 2px rgba(0,0,0,.3);
+		margin: 0;
+		padding: 0 40px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	#top-nav {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+
+	.nav,
+	.nav li {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.nav {
+		display: block;
+		text-align: center;
+	}
+
+	.nav li {
+		display: inline-block;
+		line-height: 40px;
+		position: relative;
+	}
+
+	.nav a {
+		display: block;
+		line-height: 40px;
+		padding: 0 10px;
+		color: #383838;
+	}
+
+	.nav a:hover {color: #139F26;}
+
+	/* Second Level */
+
+	.nav ul {
+		display: none; /* Display on hover */
+		width: 160px;
+		position: absolute;
+		left: 0;
+		top: 40px;
+		text-align: left;
+		background: #139F26;
+		color: #F9F9F9;
+	}
+
+	.nav ul li {
+		display: block;
+		width: 100%;
+		border-bottom: 1px solid #118F22;
+		line-height: 35px;
+	}
+
+	.nav ul li a {
+		color: #F9F9F9;
+		line-height: 1.4;
+		padding: 6px 10px;
+	}
+
+	.nav ul li a:hover {
+		color: #F9F9F9;
+		background: #0C5F17;
+	}
+
+	/* Display submenu on hover */
+
+	.nav li:hover ul {
+		display: block;
+	}
+
+	/* Plus on list with submenu */
+
+	.nav li a:first-child:nth-last-child(2):after {
+		content: "+";
+		padding-left: 5px;
+	}
+
+	/*	===============================
+			Menu Icon
+	================================== */
+
+	#menu-icon {
+		line-height: 40px;
+		font-size: 22px;
+		color: #383838;
+		max-width: 680px;
+		height: 40px;
+		margin: 0 auto;
+		text-align: center;
+		cursor: pointer;
+		display: none;
+	}
+
+	#menu-icon:hover {color: green;}
+
+	/*	===============================
+			Media 680px
+	================================== */
+
+	@media screen and (max-width: 680px) {
+
+		#menu-icon {display: block;}
+		ul.nav-open {display: none;}
+		
+		.nav {text-align: left;}
+		.nav li {
+			display: block;
+			width: 100%;
+			border-bottom: 1px solid #444;
+			border-top: 1px solid #222;
+			}
+			
+		.nav li:first-child {border-top: 0;}
+		
+		.nav li a {
+			color: #F9F9F9;
+			background: #333;
+			padding: 8px 15px 8px 30px;
+			line-height: 1.4;
+			}
+			
+		.nav li a:hover {
+			background: green;
+			color: #F9F9F9;
+			}
+			
+		.nav ul {
+			display: none;
+			width: 100%;
+			position: relative;
+			text-align: left;
+			background: #139F26;
+			color: #F9F9F9;
+			top: 0;
+		}
+		
+		.nav li:hover ul {display: none;}
+		
+		.nav ul li a {
+			padding: 5px 35px;
+			background: #555;
+		}
+		
+	} /* media end */
+</style>
+
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT		============ -->
+
+<div id="menu-container">
+
+	<div id="top-nav">
+		<div id="menu-icon"><i class="fa fa-bars"></i></div>
+		<ul id="menu" class="nav nav-open">
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Services</a>
+				<ul>
+					<li><a href="#">First service</a></li>
+					<li><a href="#">Second</a></li>
+					<li><a href="#">Copyrighting</a></li>
+					<li><a href="#">Consultation</a></li>
+					<li><a href="#">Analysis</a></li>
+				</ul>
+			</li>
+			<li><a href="#">About Us</a></li>
+			<li><a href="#">Portfolio</a>
+				<ul>
+					<li><a href="#">Full Width</a></li>
+					<li><a href="#">Two Columns Two Columns</a></li>
+					<li><a href="#">Isotope</a></li>
+					<li><a href="#">Masonry</a></li>
+				</ul>
+			</li>
+			<li><a href="#">Products</a></li>
+			<li><a href="#">Contact</a>
+				<ul>
+					<li><a href="#">Location</a></li>
+					<li><a href="#">Goggle Map</a></li>
+				</ul>
+			</li>
+		</ul>
+	
+	</div><!-- top-nav -->
+
+</div><!-- menu-container -->
+
+	<div style="padding: 40px;">
+		<h2>Lorem ipsum dolor sit.</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident, quasi, omnis maxime odio amet voluptatibus quia saepe obcaecati enim cumque cupiditate molestiae quam impedit dolores deserunt hic rem autem eius reiciendis quod officiis accusantium corrupti itaque fuga quos atque quo laborum culpa cum tempore. Fuga minus dolore labore inventore sunt porro excepturi ut. Et vero hic iusto velit nostrum. Enim, hic, voluptatibus dicta voluptate laborum ratione unde veniam dolorum iusto eos nulla at culpa velit. Reiciendis, veniam, dicta consectetur recusandae officia quaerat eius eveniet ratione beatae ipsum obcaecati nobis numquam quis quasi alias nam vero veritatis illo eaque necessitatibus nemo aliquam aspernatur temporibus soluta expedita. Ex, aliquam, dignissimos natus ipsam sit accusantium ratione corporis aperiam commodi praesentium! Illum, porro, quam, fugit incidunt voluptatum cupiditate reiciendis in quas recusandae molestias quaerat soluta eaque repellendus magni non. Quasi, et reprehenderit ipsum perferendis sit quisquam dolores inventore ipsa totam eligendi molestias modi perspiciatis aspernatur recusandae harum beatae veniam consectetur itaque. Architecto, inventore, magnam totam aut sequi iusto ipsam dolorem soluta animi repellendus commodi cupiditate culpa. Voluptas, id fugit aspernatur nihil iste placeat earum in distinctio consequatur animi nisi dolor provident obcaecati doloribus porro architecto veniam ratione nemo eum facilis explicabo natus officia beatae modi dolores eius esse quis expedita quas enim sequi quisquam hic nostrum necessitatibus suscipit quod quos vel. Ea, minus, illum. Blanditiis, minima, quod, harum odit itaque facilis dolorum voluptatum nulla quis in aliquid incidunt esse cum. Fugit, illo, delectus veniam placeat architecto repellendus error aut molestiae numquam aperiam alias veritatis obcaecati voluptatibus voluptate esse est quae a ad iusto nobis maiores inventore praesentium non? Blanditiis, iste, dolorem, facere vero ipsam reiciendis reprehenderit ad beatae optio at eaque expedita dolorum quaerat odio ipsum. Veritatis, aut animi ipsum asperiores autem eveniet voluptas esse. Eveniet, temporibus, voluptates, voluptatibus ut iusto dolore dignissimos eius voluptatem magni corrupti excepturi dolorem reprehenderit. Tenetur, laborum, officia aperiam voluptatum deleniti quibusdam unde excepturi quam numquam debitis id deserunt doloribus sit exercitationem nostrum laudantium mollitia perspiciatis hic cum eaque! Ipsa, doloremque, sunt.</p></div>
+
+<!-- ============	/CONTENT	============ -->
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>  
+$(document).ready(function(){  // doc ready 
+	$('#menu-icon').click(function(){
+		
+		$("#menu-icon i").toggleClass('fa-bars fa-chevron-up');
+		
+		if($('#menu').hasClass('nav-open')){
+			$('#menu').removeClass('nav-open');
+		} else {
+			$('#menu').addClass('nav-open');
+		}
+		
+	});
+});		// doc ready 
+</script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Top Icon Toggle</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- ============	CSS		============ -->
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<style>
+	html{overflow-y: scroll;}
+	body {
+		font-family: "open sans", "helvetica neue", helvetica, arial, sans-serif;
+		color: #444;
+		font-size: 14px;
+		line-height: 20px;
+		background: #FFF;
+		margin: 0;
+		padding: 0;
+	}
+	img {max-width: 100%; height: auto; border: 0;}
+	a {text-decoration: none; outline: none;}
+
+	[class^=fa] { font-family: FontAwesome; }
+
+	/* ========================================= */
+
+	.center-bar {
+		margin: 0 0 30px 40px;
+		width: 40px;
+		float: left;
+	}
+
+	.bar-icon {
+		width: 40px;
+		height: 30px;
+		position: relative;
+		text-align: center;
+		color: #FFF;
+		font-size: 16px;
+		line-height: 30px;
+	}
+
+	/* Green Styles */
+	.green {
+		background: #52b152;
+		background: -moz-linear-gradient(top,  #52b152 0%, #008800 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#52b152), color-stop(100%,#008800));
+		background: -webkit-linear-gradient(top,  #52b152 0%,#008800 100%);
+		background: -o-linear-gradient(top,  #52b152 0%,#008800 100%);
+		background: -ms-linear-gradient(top,  #52b152 0%,#008800 100%);
+		background: linear-gradient(to bottom,  #52b152 0%,#008800 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#52b152', endColorstr='#008800',GradientType=0 );
+	}
+
+	.green:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #008800 transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+
+	/* Orange Red Styles */
+	.orange {
+		background: #fd7b3d;
+		background: -moz-linear-gradient(top,  #fd7b3d 0%, #d55900 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fd7b3d), color-stop(100%,#d55900));
+		background: -webkit-linear-gradient(top,  #fd7b3d 0%,#d55900 100%);
+		background: -o-linear-gradient(top,  #fd7b3d 0%,#d55900 100%);
+		background: -ms-linear-gradient(top,  #fd7b3d 0%,#d55900 100%);
+		background: linear-gradient(to bottom,  #fd7b3d 0%,#d55900 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fd7b3d', endColorstr='#d55900',GradientType=0 );
+	}
+
+	.orange:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #d55900 transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	/* Black Styles */
+	.black {
+		background: #7d7d7d;
+		background: -moz-linear-gradient(top,  #7d7d7d 0%, #0e0e0e 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7d7d7d), color-stop(100%,#0e0e0e));
+		background: -webkit-linear-gradient(top,  #7d7d7d 0%,#0e0e0e 100%);
+		background: -o-linear-gradient(top,  #7d7d7d 0%,#0e0e0e 100%);
+		background: -ms-linear-gradient(top,  #7d7d7d 0%,#0e0e0e 100%);
+		background: linear-gradient(to bottom,  #7d7d7d 0%,#0e0e0e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7d7d', endColorstr='#0e0e0e',GradientType=0 );
+	}
+
+	.black:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #0e0e0e transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	/* Blue Styles */
+	.blue {
+		background: #54a3ee;
+		background: -moz-linear-gradient(top,  #54a3ee 1%, #245193 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#54a3ee), color-stop(100%,#245193));
+		background: -webkit-linear-gradient(top,  #54a3ee 1%,#245193 100%);
+		background: -o-linear-gradient(top,  #54a3ee 1%,#245193 100%);
+		background: -ms-linear-gradient(top,  #54a3ee 1%,#245193 100%);
+		background: linear-gradient(to bottom,  #54a3ee 1%,#245193 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#54a3ee', endColorstr='#245193',GradientType=0 );
+	}
+
+	.blue:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #245193 transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	/* Royal Styles */
+	.royal {
+		background: #c1596f;
+		background: -moz-linear-gradient(top,  #c1596f 0%, #6d0019 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c1596f), color-stop(100%,#6d0019));
+		background: -webkit-linear-gradient(top,  #c1596f 0%,#6d0019 100%);
+		background: -o-linear-gradient(top,  #c1596f 0%,#6d0019 100%);
+		background: -ms-linear-gradient(top,  #c1596f 0%,#6d0019 100%);
+		background: linear-gradient(to bottom,  #c1596f 0%,#6d0019 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1596f', endColorstr='#6d0019',GradientType=0 );
+	}
+
+	.royal:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #6d0019 transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+
+	/* Proba Styles */
+	.proba {
+		background: #c1596f;
+		background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.7) 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.7)));
+		background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.7) 100%);
+		background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.7) 100%);
+		background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.7) 100%);
+		background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.7) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#b3000000',GradientType=0 );
+	}
+
+	.proba:after {
+		content: "";
+		display: block;
+		border-style: solid;
+		border-width: 10px 20px 0 20px;
+		border-color: #6d0019 transparent transparent transparent;
+		
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
+</style>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT		============ -->
+
+<div id="fix-bar">
+
+	<div class="center-bar">
+		<div class="bar-icon green"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+	<div class="center-bar">
+		<div class="bar-icon orange"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+	<div class="center-bar">
+		<div class="bar-icon black"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+	<div class="center-bar">
+		<div class="bar-icon blue"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+	<div class="center-bar">
+		<div class="bar-icon royal"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+	<div class="center-bar">
+		<div class="bar-icon proba"><i class="fa fa-chevron-down"></i></div>
+	</div>
+	
+</div>
+
+
+<!-- ============	/CONTENT	============ -->
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="response.js"></script>
+<script>  
+$(document).ready(function(){  // doc ready 
+	$('.bar-icon').click(function(){
+		$(this).children().toggleClass('fa-chevron-down fa-chevron-up');
+	});
+});		// doc ready 
+</script>
+</body>
+</html>
