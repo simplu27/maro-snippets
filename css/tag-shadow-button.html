@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Title</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- ============	CSS		============ -->
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- ============	GFont		============ -->
+<link href='http://fonts.googleapis.com/css?family=Source+Code+Pro|Open+Sans:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
+<style>
+	html{overflow-y: scroll;}
+
+	body {
+		font-family: "open sans", "helvetica neue", helvetica, arial, sans-serif;
+		color: #444;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+		border: 0;
+	}
+
+	a {
+		text-decoration: none;
+		outline: none;
+	}
+
+	#wrap {
+		max-width: 700px;
+		margin: 30px auto;
+		padding: 20px;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	a.gradient {
+		position: relative;
+		cursor: pointer;
+		
+		font-size: 15px;
+		font-weight: bold;
+		color: #FFF;
+		text-shadow: 0 1px 0 rgba(0,0,0,.8);
+		display: inline-block;
+		padding: 10px 25px;
+		margin: 20px 20px 0 0;
+		text-align: center;
+		
+		-moz-transition: all .5s linear;
+		-webkit-transition: all .5s linear;
+		transition: all .5s linear;
+	}
+
+	/* tag right-bottom */
+	.tag-rb:after {
+		content: "";
+	    border-bottom: 8px solid rgba(0, 0, 0, 0);
+	    border-left: 8px solid #6F6F6F;
+		position: absolute;
+	    right: 0;
+		bottom: -9px;
+	}
+
+	/* tag right-top */
+	.tag-rt:after {
+		content: "";
+	    border-top: 8px solid rgba(0, 0, 0, 0);
+	    border-left: 8px solid #6F6F6F;
+		position: absolute;
+	    right: 0;
+		top: -8px;
+	}
+
+	/* tag left-bottom */
+	.tag-lb:after {
+		content: "";
+	    border-bottom: 8px solid rgba(0, 0, 0, 0);
+	    border-right: 8px solid #6F6F6F;
+		position: absolute;
+	    left: 0;
+		bottom: -8px;
+	}
+
+	/* tag right-top */
+	.tag-lt:after {
+		content: "";
+	    border-top: 15px solid rgba(0, 0, 0, 0.0);
+	    border-right: 15px solid #6F6F6F;
+		position: absolute;
+	    left: 0;
+		top: -15px;
+	}
+
+	.green-gradient {
+		background-color: #82D344;
+		background-image: linear-gradient(to bottom, #82D344, #51AF34);
+		/* border-bottom: 1px solid #31611E; */
+	}
+
+	.green-gradient:hover {
+		background:#51AF34;
+	}
+
+	.red-gradient {
+		background: #ff3019;
+		background-image: -moz-linear-gradient(top,  #ff3019 0%, #cf0404 100%);
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff3019), color-stop(100%,#cf0404));
+		background: -webkit-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+		background: -o-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+		background: -ms-linear-gradient(top,  #ff3019 0%,#cf0404 100%);
+		background-image: linear-gradient(to bottom,  #ff3019 0%,#cf0404 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 );
+	}
+
+	.red-gradient:hover {
+		background:#cf0404;
+	}
+
+
+</style>
+<!--[if IE]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT		============ -->
+<div id="wrap">
+
+<h1>Tag shadows</h1>
+<p>Inspiration from: <a href="http://designmodo.com/responsive-slider/">http://designmodo.com/responsive-slider/</a></p>
+
+<a href="#" class="gradient green-gradient tag-rb">Right Bottom</a>
+<a href="#" class="gradient green-gradient tag-rt">Right Top</a>
+<a href="#" class="gradient green-gradient tag-lb">Left Bottom</a>
+<a href="#" class="gradient green-gradient tag-lt">Left<br>Top</a>
+<br>
+<a href="#" class="gradient red-gradient tag-rb">Right Bottom</a>
+<a href="#" class="gradient red-gradient tag-rt">Right Top</a>
+<a href="#" class="gradient red-gradient tag-lb">Left Bottom</a>
+<a href="#" class="gradient red-gradient tag-lt">Left<br>Top</a>
+</div>
+<!-- ============	/CONTENT	============ -->
+<!-- JS -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>  
+$(document).ready(function(){  // doc ready 
+
+});		// doc ready 
+</script>
+</body>
+</html>
