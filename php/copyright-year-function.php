@@ -18,3 +18,5 @@
 
 // Copyright function end
 ?>
+
+<?php echo "Copyright &copy; 2016-" . date('Y'); ?>
