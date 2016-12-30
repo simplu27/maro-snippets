@@ -38,7 +38,8 @@ else { if(preg_match('/^.*\.(php[\d]?|js|txt)$/i', $path)) { check_files($path);
 
 // if you would like to check other (all) file types you can comment out/un-comment and or modify
 // the following lines as needed. You can only have one of the else{} statements un-commented.
-// The first example contains a lengthy OR (the | means OR) statement, the part inside the (),
+// The first example contains a leng
+thy OR (the | means OR) statement, the part inside the (),
 // (php[\d]?|htm|html|shtml|js|asp|aspx) You can add/remove filetypes by modifying this part
 // (php[\d]?|htm|html|shtml) will only check .php, .htm, .html, .shtml files.
 
