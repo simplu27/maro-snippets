@@ -23,4 +23,7 @@ $user_ip = getUserIP();
 
 echo $user_ip; // Output IP address [Ex: 177.87.193.134]
 
+// Convert to string: ip2long($ip);
+// Revert to ip4add: long2ip($string_ip);
+
 ?>
