@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<title>Resize</title>
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===========	CSS 	=========== -->
+<link rel="stylesheet" media="screen" href="style.css">
+<!--[if lt IE 9]>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+</head>
+<body>
+<!-- ============	CONTENT INIT	============ -->
+
+	Content here
+
+<!-- ============	CONTENT END		============ -->
+
+<!-- ===========	JS 	=========== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+		// include jQuery
+		// https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js
+		var ww = $(window).width();
+		var wh = $(window).height();
+
+		$('body').append('<div id="dim" style="position: fixed; bottom: 5px; left: 5px; background: rgba(0,0,0,.15); padding: 4px; font-family: sans-serif; font-size: 12px;">' + ww + ' x ' + wh + 'px</div>');
+
+		$(window).resize(function() {
+			var newWidth = $(window).width();
+			var newHeight = $(window).height();
+			$("#dim").html(newWidth + ' x ' + newHeight + 'px');
+		});
+	});
+</script>
+</body>
+</html>

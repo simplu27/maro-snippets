@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<title>Sandbox</title>
+<meta name="description" content="">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- ===========	CSS 	=========== -->
+<link rel="stylesheet" media="screen" href="style.css">
+<style>
+	#unu {
+		width: 100px;
+		height: 100px;
+		padding: 20px;
+		border: 2px solid gray;
+		background: rgba(0, 0, 0, .3);
+	}
+
+	.bg{background: yellow;}
+
+	.lista {}
+	#button {
+		background: red; color: #FFF; display: inline-block;
+	}
+</style>
+</head>
+<body>
+<!-- ============	CONTENT INIT	============ -->
+
+	<div id="unu"></div>
+
+	<ul class="lista">
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+		<li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, in!</li>
+	</ul>
+	<div id="button">Show/hide list</div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, ut! Adipisci optio culpa sed quis omnis nesciunt dolorum eligendi modi accusantium impedit amet, quibusdam tempora tempore labore excepturi numquam veritatis, nostrum inventore fugit perspiciatis. Atque blanditiis temporibus voluptatum accusantium, error.</p>
+
+<!-- ============	CONTENT END		============ -->
+
+<!-- ===========	JS 	=========== -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/js/jquery-1.11.2.min.js"><\/script>')</script>
+<script>
+	$(document).ready(function(){  
+		var select = $('li');
+		select.last().addClass('bg');
+		select.hover(function(){
+			$(this).removeClass('bg');
+		});
+	
+	});  //end document ready
+
+
+</script>
+</body>
+</html>
