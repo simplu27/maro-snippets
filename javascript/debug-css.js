@@ -1,0 +1,2 @@
+function(a){return [].forEach.call(document.querySelectorAll(a),function(b){b.style.outline = "1px solid #" +(~~(Math.random()*(1<<24))).toString(16)});}
+// https://gist.github.com/addyosmani/fd3999ea7fce242756b1
