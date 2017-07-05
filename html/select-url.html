@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Select Change URL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+	
+	option.fabric {
+		background: #DEDEDE;
+	}
+
+</style>
+</head>
+<body>
+
+	<div class="cahle-nav">
+		
+		<span>Selectati un model:</span> <select id="cahle" onChange="window.location.href=this.value">
+
+		    <option class="fabric" value="#vadu-crisului">Cahle de Vadu Crisului</option>
+
+		    <option value="#vadNatur">Vad Natur</option>
+		    <option value="http://www.google.ro">Google</option>
+		    <option value="#rusticNatur">Rustic Natur</option>
+		    <option value="#vadBrun">Vad Brun</option>
+		    <option value="#cristalNatur">Cristal Natur</option>
+		    <option value="#cristalBrun">Cristal Brun</option>
+		    
+		    <option class="fabric" value="#deva">Cahle de Deva</option>
+
+			<option value="#maroT">Maro T</option>
+			<option value="#maroDiamant">Maro Diamant</option>
+			<option value="#maroTrandafir">Maro Trandafir</option>
+			<option value="#maroBizantin">Maro Bizantin</option>
+		    
+		</select>
+
+	</div><!-- cahle-nav -->
+<br><br><br>
+	<div class="box">
+		<form action="">
+		  <input type="radio" name="gender" id="male" value="#male" onClick="window.location.href=this.value"> <label for="male">Male</label><br>
+
+		  <input type="radio" name="gender" id="female" value="#female" onClick="window.location.href=this.value"> <label for="female">Female</label><br>
+
+		  <input type="radio" name="gender" id="other" value="#other" onClick="window.location.href=this.value"> <label for="other">Other</label><br>
+
+		  <input type="radio" name="google" id="google" value="http://www.google.ro" onClick="window.location.href=this.value"> <label for="google">Google</label><br>
+		</form>
+	</div>
+
+</body>
+</html>
