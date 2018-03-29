@@ -1,6 +1,9 @@
 <?php
 // http://stackoverflow.com/questions/13646690/how-to-get-real-ip-from-visitor
 
+date_default_timezone_set('Europe/Bucharest');
+$data_trimiterii = date("d.m.Y H:i");
+
 function getUserIP() {
 
     $client  = @$_SERVER['HTTP_CLIENT_IP'];
